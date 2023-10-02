@@ -14,14 +14,20 @@ import { sendMsgToOpenAI } from './openai';
 
 function App() {
     const [input, setInput] = useState("");
-    const [messages, setMessages] = useState({
-      text: "I am LumenAI, an AI language model designed to provide information.",
-      isBot: true, 
-    });
+    const [messages, setMessages] = useState([
+      {
+        text: "I am LumenAI, an AI language model designed to provide information.",
+        isBot: true, 
+      }
+  ]);
 
     const handleSend = async () => {
     const res = await sendMsgToOpenAI(input);
-    console.log(res);
+    setMessages([
+      ...messages,
+      { text: input, isBot: false },
+      { text: res, isBot: true }
+    ]);
   }
 
   return (
@@ -43,18 +49,17 @@ function App() {
         </div>
         <div className='main'>
           <div className='chats'>
-            <div className='chat'>
-              <img className='chatImg' src={userIcon} alt='' /><p className='txt'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum</p>
-            </div>
-            <div className='chat bot'>
-              <img className='chatImg' src={gptImgLogo} alt='' /><p className='txt'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum</p>
-            </div>
+            {messages.map((message, i) => 
+                <div key={i} className={message.isBot?'chat bot':'chat'}>
+                  <img className='chatImg' src={message.isBot?gptImgLogo:userIcon} alt='' /><p className='txt'>{ message.text }</p>
+                </div>
+            )}
           </div>
           <div className='chatFooter'>
             <div className='inp'>
               <input type='text' placeholder='Send a message' value={input} onChange={(e)=>{setInput(e.target.value)}}/><button className='send' onClick={handleSend}><img src={sendBtn} alt='Send' /></button>
             </div>
-          <p>LumenAI may produce incorrect results</p>
+          <p>LumenAI may produce inaccurate results</p>
         </div>
      </div>
     </div>
