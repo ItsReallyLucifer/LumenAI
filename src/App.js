@@ -12,9 +12,12 @@ import { useState } from 'react';
 import { sendMsgToOpenAI } from './openai';
 
 
-
 function App() {
     const [input, setInput] = useState("");
+    const [messages, setMessages] = useState({
+      text: "I am LumenAI, an AI language model designed to provide information.",
+      isBot: true, 
+    });
 
     const handleSend = async () => {
     const res = await sendMsgToOpenAI(input);

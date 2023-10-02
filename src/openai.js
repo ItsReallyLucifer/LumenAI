@@ -25,14 +25,23 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-export async function sendMsgToOpenAI() {
+export async function sendMsgToOpenAI(userMessage) {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: 'you assist and asnwer questions' }],
+    messages: [
+    { role: 'system', content: 'you assist and answer questions' },
+    { role: 'user', content: userMessage }
+    ],
     model: 'gpt-3.5-turbo',
+    temperature: 0.7,
+    max_tokens: 256,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0
   });
 
   //return completion.choices[0].message.content;
   console.log(completion.choices[0].message.content);
+  return completion.choices[0].message.content;
 }
 
-sendMsgToOpenAI();
+// sendMsgToOpenAI(userMessage);
