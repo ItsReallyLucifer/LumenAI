@@ -2,6 +2,8 @@
 
 LumenAI is a single-page web application powered by ChatGPT 3.5, offering an intuitive platform to ask questions and receive responses.
 
+<img src=https://github.com/ItsReallyLucifer/LumenAI/blob/7e361a0edc9c628839c598977cbfe8d339ce4fcd/LumenStatic.png>
+
 ## Features
 
 - **ChatGPT 3.5 Integration**: LumenAI harnesses the power of ChatGPT 3.5 for natural language understanding and generation, providing human-like responses to your questions.
