@@ -3,8 +3,6 @@ import gptLogo from './assets/LumenAI.png';
 import addBtn from './assets/add-30.png';
 import msgIcon from './assets/message.svg';
 import home from './assets/home.svg';
-import saved from './assets/bookmark.svg';
-import rocket from './assets/rocket.svg';
 import sendBtn from './assets/send.svg';
 import userIcon from './assets/blankUser2.png';
 import gptImgLogo from './assets/chatLogo.png';
@@ -80,8 +78,6 @@ function App() {
           </div>
           <div className='lowerSide'>
             <div className='listItems'><img src={home} alt='Home' className='listItemsImg' />Welcome to LumenAI - Home. Just ask anything you need answered and LumenAI will try to assist you! </div>
-            {/* <div className='listItems'><img src={saved} alt='Saved' className='listItemsImg' />Saved</div>
-            <div className='listItems'><img src={rocket} alt='Upgrade' className='listItemsImg' />Upgrade to Pro</div> */}
           </div>
         </div>
         <div className='main'>
