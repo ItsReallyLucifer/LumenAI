@@ -79,9 +79,9 @@ function App() {
             </div>
           </div>
           <div className='lowerSide'>
-            <div className='listItems'><img src={home} alt='Home' className='listItemsImg' />Home</div>
-            <div className='listItems'><img src={saved} alt='Saved' className='listItemsImg' />Saved</div>
-            <div className='listItems'><img src={rocket} alt='Upgrade' className='listItemsImg' />Upgrade to Pro</div>
+            <div className='listItems'><img src={home} alt='Home' className='listItemsImg' />Welcome to LumenAI - Home. Just ask anything you need answered and LumenAI will try to assist you. </div>
+            {/* <div className='listItems'><img src={saved} alt='Saved' className='listItemsImg' />Saved</div>
+            <div className='listItems'><img src={rocket} alt='Upgrade' className='listItemsImg' />Upgrade to Pro</div> */}
           </div>
         </div>
         <div className='main'>
